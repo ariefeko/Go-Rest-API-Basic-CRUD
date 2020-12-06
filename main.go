@@ -51,8 +51,8 @@ func handleRequest() {
 	myRouter := mux.NewRouter().StrictSlash(true)
 
 	myRouter.HandleFunc("/", homePage)
-	myRouter.HandleFunc("/api/products", createProduct).Methods("POST")
 	myRouter.HandleFunc("/api/products", getProducts).Methods("GET")
+	myRouter.HandleFunc("/api/product", createProduct).Methods("POST")
 	myRouter.HandleFunc("/api/product/{id}", getProduct).Methods("GET")
 	myRouter.HandleFunc("/api/product/{id}", updateProduct).Methods("PUT")
 	myRouter.HandleFunc("/api/product/{id}", deleteProduct).Methods("DELETE")
